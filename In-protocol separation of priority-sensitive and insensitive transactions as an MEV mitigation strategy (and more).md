@@ -1,7 +1,5 @@
 # In-protocol separation of priority-sensitive and insensitive transactions as an MEV mitigation strategy (and more)
 
-[TOC]
-
 
 As it is known, there's two very different kinds of transactions in Ethereum blocks: ones that care about the order and ones that do not, or at least not strongly enough to compete for it. The most common kind of transaction of the first type cares specifically about priority, because it obtains its value by being first to some MEV extraction opportunity, and is willing to pay much higher fees to be first among the relevant competing transactions.
 
