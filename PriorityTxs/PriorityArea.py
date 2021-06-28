@@ -18,7 +18,7 @@ class PriorityArea:
         self.rewards = np.array([int(block["miner_reward"])*weiToEth for block in self.blocks])
         self.original_gas = np.array([gas_used(block) for block in self.blocks])
         self.n_blocks = len(self.blocks)
-        self.daily_gas_prices = self.load_daily_gas_prices()
+        #self.daily_gas_prices = self.load_daily_gas_prices()
 
 
     #lastBlockNumber="" corresponds to latest="" in the flashbots API, downloading from the last available block
@@ -145,7 +145,7 @@ class PriorityArea:
         new_rewards = 0
         
         for i, block in enumerate(self.blocks):
-            gas_fee[i] = max(gas_fee[i], self.block_to_price(block)) #SET THE PRIORITY GAS FEE TO BE AT LEAST THE AVG DAILY GAS FEE
+            #gas_fee[i] = max(gas_fee[i], self.block_to_price(block)) #SET THE PRIORITY GAS FEE TO BE AT LEAST THE AVG DAILY GAS FEE
             for tx in block["transactions"]:
                 tx_gas = int(tx["gas_used"])
                 tx_burn = tx_gas*gas_fee[i]*gweiToEth
